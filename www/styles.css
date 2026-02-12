@@ -1,0 +1,351 @@
+/* ==============================================================================
+   CLINICAL WEBAPP - STYLESHEET
+   ============================================================================== 
+   Custom CSS for Clinical Webapp - Exact recreation from Figma Design
+   
+   Structure:
+   1. Base Styles
+   2. Layout Grid
+   3. Sidebar Styles
+   4. Header Styles
+   5. Main Content Styles
+   6. Scrollbar Customization
+   7. Responsive Design
+   8. Shiny Notifications
+   ============================================================================== */
+
+/* ==============================================================================
+   1. BASE STYLES
+   ============================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #F8FAFC;
+  overflow: hidden;
+}
+
+/* ==============================================================================
+   2. LAYOUT GRID - Full Screen Grid Layout
+   ============================================================================== */
+
+.main-container {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  grid-template-rows: 80px 1fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar content";
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* ==============================================================================
+   3. SIDEBAR STYLES - Left Navigation Panel
+   ============================================================================== */
+
+/* Sidebar Container */
+.left-sidebar {
+  grid-area: sidebar;
+  background-color: #0d1f36;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 120px;
+  position: relative;
+  z-index: 100;
+}
+
+/* Logo Container at Top of Sidebar */
+.logo-container {
+  width: 100%;
+  height: 80px;
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: none;
+  flex-shrink: 0;
+}
+
+.logo-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Navigation Menu Container */
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Individual Menu Items */
+.menu-item {
+  background: transparent;
+  color: #ffffff;
+  border: none;
+  padding: 16px 12px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 0;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.3;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Menu Item Hover State */
+.menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+/* Menu Item Active/Selected State */
+.menu-item.active {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Multi-line Menu Item Text */
+.menu-item-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+/* ==============================================================================
+   4. HEADER STYLES - Top Navigation Bar
+   ============================================================================== */
+
+/* Header Container */
+.top-header {
+  grid-area: header;
+  background-color: #0d1f36;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 80px;
+  z-index: 50;
+}
+
+/* Application Title */
+.header-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+/* Header Action Icons Container */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Notification Bell Icon */
+.bell-icon {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bell-icon:hover {
+  opacity: 0.8;
+}
+
+.bell-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* User Profile Avatar */
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-avatar:hover {
+  opacity: 0.9;
+}
+
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==============================================================================
+   5. MAIN CONTENT STYLES - Primary Content Area
+   ============================================================================== */
+
+/* Main Content Container */
+.main-content {
+  grid-area: content;
+  background-color: #e8ebf3;
+  padding: 32px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100vh - 80px);
+}
+
+/* Content Headings */
+.main-content h2 {
+  color: #0f172a;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.main-content h4 {
+  color: #475569;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Content Paragraphs */
+.main-content p {
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Content Lists */
+.main-content ul {
+  color: #64748b;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.main-content li {
+  margin-bottom: 8px;
+}
+
+/* ==============================================================================
+   6. SCROLLBAR CUSTOMIZATION
+   ============================================================================== */
+
+/* Sidebar Scrollbar */
+.sidebar-menu::-webkit-scrollbar,
+.main-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Main Content Scrollbar */
+.main-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.main-content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ==============================================================================
+   7. RESPONSIVE DESIGN - Mobile and Tablet Adjustments
+   ============================================================================== */
+
+@media (max-width: 768px) {
+  /* Stack layout on small screens */
+  .main-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 1fr;
+    grid-template-areas:
+      "header"
+      "content";
+  }
+  
+  /* Hide sidebar off-screen by default */
+  .left-sidebar {
+    position: fixed;
+    left: -120px;
+    transition: left 0.3s ease;
+  }
+  
+  /* Show sidebar when open class is added */
+  .left-sidebar.open {
+    left: 0;
+  }
+}
+
+/* ==============================================================================
+   8. SHINY NOTIFICATIONS - Custom Notification Styling
+   ============================================================================== */
+
+.shiny-notification {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 300px;
+  background-color: #ffffff;
+  border-left: 4px solid #1e40af;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 16px;
+  font-family: 'Inter', sans-serif;
+}
+
+.shiny-notification-message {
+  color: #0f172a;
+  font-size: 14px;
+}
+
+.shiny-notification-close {
+  color: #64748b;
+  opacity: 0.7;
+}
+
+.shiny-notification-close:hover {
+  opacity: 1;
+}
