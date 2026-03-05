@@ -1,0 +1,12 @@
+﻿# ==============================================================================
+# LIBRARY LOADER
+# ==============================================================================
+# Loads all required R packages for the Clinical Webapp.
+# ==============================================================================
+
+library(shiny)
+library(htmltools)
+library(shinyjs)
+library(yaml)
+library(httr)
+library(jsonlite)
