@@ -1,0 +1,10 @@
+<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer triangle fill -->
+  <path d="M28 6L4 48h48L28 6z" fill="#FFF7ED"/>
+  <!-- Outer triangle border -->
+  <path d="M28 6L4 48h48L28 6z" stroke="#F97316" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Exclamation stem -->
+  <rect x="26" y="22" width="4" height="16" rx="2" fill="#F97316"/>
+  <!-- Exclamation dot -->
+  <circle cx="28" cy="43" r="2.5" fill="#F97316"/>
+</svg>
